@@ -1,42 +1,71 @@
+/* 페이지 전체 id = root */
 #root {
-  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+
+/* App.jsx part */
+.app-container {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  max-width: 800px;
   margin: 0 auto;
-  padding: 2rem;
+  padding: var(--space-lg) var(--space-md);
+}
+
+/* Header.jsx part */
+.header {
   text-align: center;
+  padding-bottom: var(--space-lg);
+  border-bottom: 2px solid var(--color-secondary);
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.header__title {
+  font-family: var(--font-heading);
+  font-size: 2.5rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-xs);
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.header__subtitle {
+  font-size: 1.25rem;
+  color: var(--space-muted);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+/* MainComponent part */
+.main {
+  flex: 1;
+  margin: var(--space-lg) 0;
 }
 
-.card {
-  padding: 2em;
+.section {
+  margin-bottom: var(--space-lg);
 }
 
-.read-the-docs {
-  color: #888;
+.section__title {
+  font-family: var(--font-heading);
+  font-size: 1.75rem;
+  color: var(--color-primary);
+  margin-bottom: var(--space-sm);
+  position: relative;
+}
+
+.section__title::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: var(--color-secondary);
+  margin-top: var(--space-xs);
+}
+
+/* Footer part */
+.footer {
+  text-align: center;
+  padding-top: var(--space-lg);
+  border-top: 1px solid var(--color-muted);
+  font-size: 0.9rem;
+  color: var(--color-muted);
 }

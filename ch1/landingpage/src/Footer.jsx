@@ -1,5 +1,10 @@
 function Footer() {
-  return(<><h1>풋터</h1></>);
+  return(
+    <footer className="footer">
+      <p>☎ Contacts : 010-1234-5678 | kimil@test.com</p>
+      <p>2025 김일. All rights reserved.</p>
+    </footer>
+  );
 }
 
 export default Footer;
