@@ -1,18 +1,21 @@
-import { useRef } from 'react';
-import Counter from './components/Counter';
+import AuthContext from './components/AuthContext';
+import MyComponent from './components/MyComponent';
+import MyList from './components/MyList';
+import MyTable from './components/MyTable';
+import StudentsList from './components/StudentsList';
 import './App.css';
 
 function App() {
-  const inputRef = useRef(null);
+  const userName = '김일';
 
   return (
     <>
-      <Counter />
-
-      <input ref={inputRef} /><br /><br />
-      <button onClick={() => inputRef.current.focus()}>
-        Focus input
-      </button>
+      <StudentsList />
+      <MyTable />
+      <MyList />
+      <AuthContext.Provider value={userName}>
+        <MyComponent />
+      </AuthContext.Provider>
     </>
   );
 }
