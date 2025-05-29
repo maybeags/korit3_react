@@ -2,7 +2,10 @@ import axios from "axios";
 import { CarResponse, Car, CarEntry } from "../types";
 
 export const getCars = async (): Promise<CarResponse[]> => {
-  const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/cars`);
+  const token = sessionStorage.getItem('jwt');
+  const response = await axios.get(`${import.meta.env.VITE_API_URL}/api/cars`, {
+    headers: { 'Authorization': token }
+  });
 
   return response.data._embedded.cars;
 }

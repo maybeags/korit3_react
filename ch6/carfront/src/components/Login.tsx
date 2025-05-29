@@ -1,6 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import { TextField, Button, Stack } from "@mui/material";
+import Carlist from "./Carlist";
 
 type User = {
   username: string;
@@ -36,14 +37,24 @@ export default function Login() {
     });
   }
 
-  return(
-    <Stack spacing={2} alignItems="center" mt={2}>
-      <TextField name="username" label="username" onChange={handleChange}/>
-      <TextField name="password" label="password" onChange={handleChange} type="password"/>
-      <Button>
-        Login
-      </Button>
-    
-    </Stack>
-  );
+  if(isAuthenticated) {
+    return <Carlist />
+  }
+
+  else {
+    return(
+      <Stack spacing={2} alignItems="center" mt={2}>
+        <TextField name="username" label="username" onChange={handleChange}/>
+        <TextField name="password" label="password" onChange={handleChange} type="password"/>
+        <Button
+          variant="outlined"
+          color="primary"
+          onClick={handleLogin}  
+        >
+          Login
+        </Button>
+      </Stack>
+    );
+  }
+  
 } 
