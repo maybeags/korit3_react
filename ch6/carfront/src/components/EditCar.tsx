@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Dialog,DialogActions, DialogTitle } from "@mui/material";
+import { Dialog,DialogActions, DialogTitle, Button } from "@mui/material";
 import { Car, CarEntry, CarResponse } from "../types";
 import CarDialogContent from "./CarDialogContet";
 import { updateCar } from "../api/carapi";
@@ -65,13 +65,13 @@ export default function EditCar({ cardata } : FormProps) {
   
   return(
     <>
-      <button onClick={handleClickOpen}>Edit</button>
+      <Button onClick={handleClickOpen} size="small">Edit</Button>
       <Dialog open={open} onClose={handleClose}>
         <DialogTitle>Edit Car | 차량 수정하기</DialogTitle>
         <CarDialogContent car={car} handleChange={handleChange} />
         <DialogActions>
-          <button onClick={handleClose}>Cancel | 취소</button>
-          <button onClick={handleSave}>Save | 저장</button>
+          <Button onClick={handleClose}>Cancel | 취소</Button>
+          <Button onClick={handleSave}>Save | 저장</Button>
         </DialogActions>
       </Dialog>
     </>
