@@ -34,8 +34,17 @@ export default function Carlist() {
     {field: 'modelYear', headerName: 'Model Year', width: 150},
     {field: 'price', headerName: '가격', width: 150},
     {
+      field: 'edit',
+      headerName: '수정',
+      width: 70,
+      sortable: false,
+      filterable: false,
+      disableColumnMenu: true,
+    },
+    {
       field: 'delete',
       headerName: '삭제',
+      width: 70,
       sortable: false,
       filterable: false,
       disableColumnMenu: true,
