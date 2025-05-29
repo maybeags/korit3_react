@@ -4,6 +4,7 @@ import { DataGrid, GridColDef, GridCellParams } from "@mui/x-data-grid";
 import { Snackbar } from "@mui/material";
 import { useState } from "react";
 import AddCar from "./AddCar";
+import EditCar from "./EidtCar";
 
 export default function Carlist() {
   const queryClient = useQueryClient();
@@ -40,6 +41,7 @@ export default function Carlist() {
       sortable: false,
       filterable: false,
       disableColumnMenu: true,
+      renderCell: (params: GridCellParams) => <EditCar cardata={params.row}/>
     },
     {
       field: 'delete',
