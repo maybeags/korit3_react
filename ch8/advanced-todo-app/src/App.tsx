@@ -37,7 +37,7 @@ function App() {
 
   return (
     <div>
-      <h1>Todo List</h1>
+      <h1>쇼핑 리스트</h1>
       <TodoForm onAddTodo={addTodo}/>
       <TodoList todos={todos} onToggleComplete={toggleComplete} onDeleteTodo={deleteTodo}/>
     </div>
