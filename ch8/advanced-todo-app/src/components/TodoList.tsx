@@ -3,8 +3,8 @@ import { TodoItem } from "./TodoItem";
 
 interface TodoListProps {
   todos: Todo[];
-  onToggleComplete: (id: string) => void;
-  onDeleteTodo: (id: string) => void;
+  onToggleComplete: (id: number) => void;
+  onDeleteTodo: (id: number) => void;
 }
 
 export const TodoList: React.FC<TodoListProps> = (props: TodoListProps) => {
@@ -15,7 +15,11 @@ export const TodoList: React.FC<TodoListProps> = (props: TodoListProps) => {
         <p> no task </p>
       ): (
         todos.map((todo) => (
-          <TodoItem todo={todo} onToggleComplete={onToggleComplete} onDeleteTodo={onDeleteTodo}/>
+          <TodoItem 
+            key={todo.id}
+            todo={todo} 
+            onToggleComplete={onToggleComplete} 
+            onDeleteTodo={onDeleteTodo}/>
         ))
       )}
     </ul>

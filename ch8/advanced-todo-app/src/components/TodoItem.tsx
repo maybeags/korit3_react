@@ -2,8 +2,8 @@ import type { Todo } from "../types/Todo";
 
 interface TodoItemProps {
   todo: Todo;
-  onToggleComplete: (id: string) => void;
-  onDeleteTodo: (id: string) => void;
+  onToggleComplete: (id: number) => void;
+  onDeleteTodo: (id: number) => void;
 }
 
 export const TodoItem: React.FC<TodoItemProps> = (props: TodoItemProps) => {
